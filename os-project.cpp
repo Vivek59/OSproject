@@ -32,6 +32,21 @@ for(j=0;j<n;j++)
 strcpy(pn[i],pn[j]);
 strcpy(pn[j],t);
 	}
-	}
-  
+	}  
+if(p[i]<p[j])
+{
+temp=p[i];
+p[i]=p[j];
+p[j]=temp;
+temp=at[i];
+at[i]=at[j];
+at[j]=temp;
+temp=et[i];
+et[i]=et[j];
+et[j]=temp;
+strcpy(t,pn[i]);
+strcpy(pn[i],pn[j]);
+strcpy(pn[j],t);
+}
+}
 
