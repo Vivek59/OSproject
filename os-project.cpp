@@ -9,4 +9,29 @@ int totwt=0,totta=0;
 float awt,ata;
 printf("Please Enter the Process:");
 scanf("%d",&n);
+for(i=0;i<n;i++)
+{
+printf("Enter process name,arrivaltime,execution time & priority:");
+scanf("%s%d%d%d",pn[i],&at[i],&et[i],&p[i]);
+}
+for(i=0;i<n;i++)
+for(j=0;j<n;j++)
+{
+  	if(p[i]==p[j])
+	{
+	if(at[i]<at[j])
+	{
+		 temp=at[i];
+		  at[i]=at[j];
+	   	at[j]=temp;
+		
+	     temp=et[i];
+        et[i]=et[j];
+        et[j]=temp;	
+ strcpy(t,pn[i]);
+strcpy(pn[i],pn[j]);
+strcpy(pn[j],t);
+	}
+	}
+  
 
