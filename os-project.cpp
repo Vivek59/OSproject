@@ -49,4 +49,31 @@ strcpy(pn[i],pn[j]);
 strcpy(pn[j],t);
 }
 }
-
+for(i=0;i<n;i++)
+{
+if(i==0)
+{
+st[i]=at[i];
+wt[i]=st[i]-at[i];
+ft[i]=st[i]+et[i];
+ta[i]=ft[i]-at[i];
+}
+else
+{
+st[i]=ft[i-1];
+wt[i]=st[i]-at[i];
+ft[i]=st[i]+et[i];
+ta[i]=ft[i]-at[i];
+}
+totwt+=wt[i];
+totta+=ta[i];
+}
+awt=(float)totwt/n;
+ata=(float)totta/n;
+printf("\nPname\tarrivaltime\texecutiontime\tpriority\twaitingtime\ttatime");
+for(i=0;i<n;i++)
+printf("\n%s\t%5d\t\t%5d\t\t%5d\t\t%5d\t\t%5d",pn[i],at[i],et[i],p[i],wt[i],ta[i]);
+printf("\nAverage waiting time is:%f",awt);
+printf("\nAverage turnaroundtime is:%f",ata);
+getch(); 
+}
